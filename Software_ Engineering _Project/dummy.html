@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--Link to styles.css file form public folder-->
+	<link rel="stylesheet" type="text/css" href="http://localhost:3001/styles.css" />
+	<!-- Icon material-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- https://material.io/resources/icons/?style=outline -->
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+	<!-- https://material.io/resources/icons/?style=round -->
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+	<!-- https://material.io/resources/icons/?style=sharp -->
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+	<!-- https://material.io/resources/icons/?style=twotone -->
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
+
+	<!-- bootstrap 5 -->
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- FontAwesome kit -->
+	<script src="https://kit.fontawesome.com/6ba63003ee.js" crossorigin="anonymous"></script>
+	<title>request form</title>
+</head>
+
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<img src="/images/FullSci.png" class="navbar-brand" style="height: 120px; margin: 20px">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+		  	</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<form action="homePage" method="get">
+							<button class="navbtn">
+								<i class="fa-solid fa-house"></i>  HOMEPAGE
+							</button>
+						</form>
+					</li>
+					<li class="nav-item">
+						<form action="logout" method="get">
+							<button class="navbtn-logout">
+								LOGOUT  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+							</button>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container-fluid" id="banner">
+		<br>
+		<h1>ประวัตินักศึกษา</h1>
+		<h2>คณะวิทยาศาสตร์และเทคโนโลยี มหาวิยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
+	</div><br>
+	<form action="getData" class="needs-validation" method="POST">
+	<!-- student data -->
+	<div style="padding: 20px 10% 20px 10%;">
+		<div class="row g-3">
+			<div class="col-md-2">
+				<label style="font-family: noto-sans-bold">
+					<span class="material-icons-outlined">account_circle</span> ประวัตินักศึกษา
+				</label>
+			</div>
+			<br>
+			<!--title name -->
+			<div class="col-md-2">
+	    		<label for="validationTitle" class="form-label">คำนำหน้าชื่อ :</label>
+	    		<select class="form-select is-invalid" id="validationTitle" aria-describedby="validationTitleFeedback"  name="title" oninput="checkTitle(this)" required>
+	      			<option selected disabled value="">-</option>
+	      			<option value="นาย">นาย</option>
+	      			<option value="นาง">นาง</option>
+	      			<option value="นางสาว" selected="selected">นางสาว</option>
+	    		</select>
+	    		<div id="validationTitleFeedback" class="invalid-feedback">
+	      			Please select your title name.
+	    		</div>
+	  		</div>
+			<!-- fname -->
+			<div class="col-md-3">
+				<label for="validationFirstname" class="form-label">ชื่อ :</label>
+				<input type="text" class="form-control is-invalid" id="validationFirstname" name="fname" value = "สุขกาย" oninput="checkFirstname(this)" required>
+				<div id="validationFirstnameFeedback" class="invalid-feedback">
+					Please choose your firstname.
+				</div>
+			</div>
+			<!-- lname -->
+			<div class="col-md-3">
+				<label for="validationLastname" class="form-label">นามสกุล :</label>
+				<input type="text" class="form-control is-invalid" id="validationLastname" name="lname" value = "สบายใจ"  oninput="checkLastname(this)" required>
+				<div id="validationLastnameFeedback" class="invalid-feedback">
+					Please choose your lastname.
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+			<!-- studentId --> 
+			<div class="col-md-2"></div>
+			<div class="col-md-3">
+				<label for="validationStudentId" class="form-label">เลขทะเบียน :</label>
+				<input type="number" class="form-control is-invalid" id="validationStudentId" name="studentId" value = "6409682222"  oninput="checkStudentId(this)" required>
+				<div id="validationStudentIdFeedback" class="invalid-feedback">
+					Please choose your student ID.
+				</div>
+			</div>
+			<!-- years -->
+			<div class="col-md-2">
+				<label for="validationGrade" class="form-label">ชั้นปีที่ :</label>
+				<select class="form-select is-invalid" id="validationGrade" aria-describedby="validationGradeFeedback" name="grade" oninput="checkGrade(this)" required>
+	      			<option selected disabled value="">-</option>
+	      			<option value="1">1</option>
+	      			<option value="2" selected = "selected">2</option>
+	      			<option value="3">3</option>
+	      			<option value="4">4</option>
+	      			<option value="5">5</option>
+	      			<option value="6">6</option>
+	      			<option value="7">7</option>
+	    		</select>
+	    		<div id="validationGradeFeedback" class="invalid-feedback">
+					Please choose your grade.
+				</div>
+			</div>
+			<!-- faculty --> 
+			<div class="col-md-3">
+				<label for="validationField" class="form-label">สาขาวิชา :</label>
+				<select class="form-select is-invalid" id="validationField" aria-describedby="validationFieldFeedback" name="field" oninput="checkField(this)" required>
+                            <option selected disabled value=""> -- select an option -- </option>
+                            <option value="วิทยาการคอมพิวเตอร์" selected = "selected">วิทยาการคอมพิวเตอร์</option>
+                            <option value="สถิติ">สถิติ</option>
+                            <option value="คณิตศาสตร์">คณิตศาสตร์</option>
+                            <option value="วิทยาศาสตร์สิ่งแวดล้อม">วิทยาศาสตร์สิ่งแวดล้อม</option>
+                            <option value="เทคโนโลยีเพื่อการพัฒนายั่งยืน">เทคโนโลยีเพื่อการพัฒนายั่งยืน</option>
+                            <option value="เทคโนโลยีการเกษตร">เทคโนโลยีการเกษตร</option>
+                            <option value="เคมี">เคมี</option>
+                            <option value="วิทยาศาสตร์และเทคโนโลยีการอาหาร">วิทยาศาสตร์และเทคโนโลยีการอาหาร</option>
+                            <option value="คณิตศาสตร์ประยุกต์">คณิตศาสตร์ประยุกต์</option>
+                            <option value="ฟิสิกส์อิเล็กทรอนิกส์">ฟิสิกส์อิเล็กทรอนิกส์</option>
+                            <option value="เทคโนโลยีชีวภาพ">เทคโนโลยีชีวภาพ</option>
+                            <option value="ฟิสิกส์">ฟิสิกส์</option>
+                            <option value="วัสดุศาสตร์">วัสดุศาสตร์</option>
+                            <option value="วิทยาศาสตร์และเทคโนโลยีสิ่งทอ">วิทยาศาสตร์และเทคโนโลยีสิ่งทอ</option>
+                            <option value="วิทยาศาสตร์และนวัตกรรมทางอาหาร">วิทยาศาสตร์และนวัตกรรมทางอาหาร</option>
+                            <option value="เทคโนโลยีพลังงานชีวภาพและการแปรรูปเคมีชีวภาพ">
+                                เทคโนโลยีพลังงานชีวภาพและการแปรรูปเคมีชีวภาพ</option>
+                            <option value="คณิตศาสตร์การจัดการ(ตรีควบโท)">คณิตศาสตร์การจัดการ (ตรีควบโท)</option>
+                            <option value="วิทยาการประกันภัย">วิทยาการประกันภัย</option>
+                            <option value="วิทยาศาสตร์อุตสาหการและการจัดการ(หลักสูตรนานาชาติ">
+                                วิทยาศาสตร์อุตสาหการและการจัดการ
+                                (หลักสูตรนานาชาติ)</option>
+                            <option value="การออกแบบเชิงนวัตกรรมดิจิทัล(หลักสูตรนานาชาติ)">การออกแบบเชิงนวัตกรรมดิจิทัล
+                                (หลักสูตรนานาชาติ)</option>
+                            <option value="เทคโนโลยีดิจิทัลแนวสร้างสรรค์(หลักสูตรนานาชาติ)">
+                                เทคโนโลยีดิจิทัลแนวสร้างสรรค์
+                                (หลักสูตรนานาชาติ)</option>
+                </select>
+				<div id="validationFieldFeedback" class="invalid-feedback">
+					Please choose your study field.
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+			<!-- advisor -->
+			<div class="col-md-2"></div>
+			<div class="col-md-3">
+				<label for="validationAdvisor" class="form-label">อาจารย์ที่ปรึกษา :</label>
+				<input type="text" class="form-control is-invalid" id="validationAdvisor" name="advisor" value = "อ.ลัมพาพรรณ" oninput="checkAdvisor(this)" required>
+				<div id="validationAdvisorFeedback" class="invalid-feedback">
+					Please choose your advisor.
+				</div>
+			</div>
+		</div>
+	</div>
+	<br><hr><br>
+
+	<!-- address -->
+	<div style="padding: 20px 10% 20px 10%;">
+		<div class="row g-3">
+			<div class="col-md-12">
+				<label style="font-family: noto-sans-bold; margin-bottom: 20px;">
+					<span class="material-icons-outlined">location_on</span> ที่อยู่ที่สามารถติดต่อได้ทางไปรษณีย์
+				</label>
+			</div>
+			<!-- houseNo -->
+			<div class="col-md-2">
+				<label for="validationHouseNo" class="form-label">บ้านเลขที่ :</label>
+				<input type="text" class="form-control is-invalid" id="validationHouseNo" name="houseNo" value = "802/112" oninput="checkHouseNo(this)" required>
+				<div id="validationHouseNoFeedback" class="invalid-feedback">
+					Please choose house No.
+				</div>
+			</div>
+			<div class="col-md-2">
+				<label for="validationVillage" class="form-label">หมู่ :</label>
+				<input type="text" class="form-control is-invalid" id="validationVillage" name="village" value = "11" oninput="checkVillage(this)" required>
+				<div id="validationVillageFeedback" class="invalid-feedback">
+					Please choose village.
+				</div>
+			</div>
+			<div class="col-md-4">
+				<label for="validationSubArea" class="form-label">ตำบล :</label>
+				<input type="text" class="form-control is-invalid" id="validationSubArea" name="subArea" value="คูคต" oninput="checkSubArea(this)" required>
+				<div id="validationSubAreaFeedback" class="invalid-feedback">
+					Please choose sub-area.
+				</div>
+			</div>
+			<div class="col-md-4">
+				<label for="validationArea" class="form-label">อำเภอ :</label>
+				<input type="text" class="form-control is-invalid" id="validationArea" name="area" value="ลำลูกกา" oninput="checkArea(this)" required>
+				<div id="validationAreaFeedback" class="invalid-feedback">
+					Please choose area.
+				</div>
+			</div>
+			<div class="col-md-4">
+				<label for="validationProvince" class="form-label">จังหวัด :</label>
+				<input type="text" class="form-control is-invalid" id="validationProvince" name="province" value="ปทุมธานี" oninput="checkProvince(this)" required>
+				<div id="validationProvinceFeedback" class="invalid-feedback">
+					Please choose province.
+				</div>
+			</div>
+			<div class="col-md-2">
+				<label for="validationPostcode" class="form-label">รหัสไปรษณีย์ :</label>
+				<input type="number" class="form-control is-invalid" id="validationPostcode" name="postcode" max="99999" value="12120" oninput="checkPostcode(this)" required>
+				<div id="validationPostcodeFeedback" class="invalid-feedback">
+					Please choose postcode.
+				</div>
+			</div>
+			<div class="col-md-3">
+				<label for="validationPhone" class="form-label">โทรศัพท์มือถือ :</label>
+				<input type="number" class="form-control is-invalid" id="validationPhone" name="phone" value="0801234567" oninput="checkPhone(this)" required>
+				<div id="validationPhoneFeedback" class="invalid-feedback">
+					Please choose phone number.
+				</div>
+			</div>
+			<div class="col-md-3">
+				<label for="validationCall" class="form-label">โทรศัพท์บ้าน(ถ้ามี) :</label>
+				<input type="number" class="form-control" id="validationCall" oninput="checkCall(this)" name="call">
+				<div id="validationCallFeedback" class="">
+					Optional
+				</div>
+			</div>
+		</div>
+	</div>
+	<br><hr><br>
+
+	<p style="text-align: center;">
+		<button type="submit" name="submit" class="submitbutton" onclick="saveData()">SUBMIT</button>
+	</p>
+
+    </form>
+	<br>
+    <div class="container-fluid" id="bottom" style="height: 100px; width: 100%; background-color: #FFD13F;"></div>
+    
+    <script src="server.js"></script>
+	<script src="/controllers/studentDataController.js"></script>
+</body>
+</html>

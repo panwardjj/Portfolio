@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--Link to styles.css file form public folder-->
+	<link rel="stylesheet" type="text/css" href="http://localhost:3001/styles.css" />
+	<!-- bootstrap 5 -->
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<title>tu</title>
+	<style>
+		body {
+			background-color:  #FFD13F;
+		}
+		.button{
+			background-color: #40E063;
+			border: 2px solid transparent;
+			border-radius: 30px;
+			box-shadow: #3ACD5A 4px 4px 0 0;
+			color: white;
+			cursor: pointer;
+			display: inline-block;
+			font-weight: 600;
+			font-size: 18px;
+			padding: 0 18px;
+			line-height: 50px;
+			text-align: center;
+			text-decoration: none;
+			user-select: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+			margin-bottom: 30px;
+			margin-top: 0;
+		}
+		.button:hover {
+			background-color: #48FC70;
+		}
+		.button:active {
+			transform: translate(2px, 2px);
+		}
+		@media (min-width: 768px) {
+		.button {
+			min-width: 120px;
+		}
+		}
+		.container {
+			margin-top: 60px;
+			background: rgba(255, 255, 255, 1);
+			border-radius: 60px;
+			border:1px solid rgba(255, 255, 255, 0.18);
+			box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+		}
+		.header{
+			color: #6B6C70;
+			text-shadow: 1px 1px 1px #919191,
+			/* 1px 2px 1px #919191,
+				1px 3px 1px #919191,
+				1px 4px 1px #919191,
+				1px 5px 1px #919191,*/
+			5px 8px 2px rgba(16,16,16,0.2),
+			5px 10px 6px rgba(16,16,16,0.2),
+			5px 15px 20px rgba(16,16,16,0.2),
+			5px 20px 30px rgba(16,16,16,0.2);
+		}
+		::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			color: grey;
+			opacity: 0.7; /* Firefox */
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color: grey;
+			opacity: 0.7; 
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		::-ms-input-placeholder { /* Microsoft Edge */
+			color: grey;
+			opacity: 0.7; 
+			font-size: 20px;
+			font-weight: bold;
+		}	
+	</style>
+</head>
+<body>
+	<center>
+	<div class="container">
+
+			<img src="/images/logo_TUcolor.png" style="float: right; width:100px;  margin: 20px;">
+
+			<div class="row" style="margin: 180px 20px 180px 20px;">
+				<div class="col">
+					<img src="/images/login_main.svg" style="width:500px;">
+				</div>
+				<!-- For test JS -->
+				<!-- <button onclick="falseLogin()" type="button" class="w3-button w3-blue">Try me!</button> -->
+				<div class="col">
+					<!--Form-->
+					<form action="auth" method="post">
+						<center>
+							<h1>
+								<b style="font-size: 70px;" class="header">WELCOME</b>
+							</h1>
+							<h2 class="header">
+								<b>SCI-TU REGISTERED</b>
+							</h2>
+							<br><br>
+							<form action="StudentLogin" method="get">
+								<button class="button" role="button">LOGIN (นักศึกษา)</button>
+							</form>
+							<br>
+							<form action="adminLogin" method="get">
+								<button class="button" role="button">LOGIN (เจ้าหน้าที่)</button>
+							</form>
+						</center>
+					</form>
+				</div>
+
+			</div>
+	</div>	
+	<script src="server.js"></script>
+</body>
+
+</html>

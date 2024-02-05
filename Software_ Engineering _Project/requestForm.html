@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--Link to styles.css file-->
+	<link rel="stylesheet" type="text/css" href="http://localhost:3001/styles.css" />
+	<!-- bootstrap 5 -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- FontAwesome kit -->
+	<script src="https://kit.fontawesome.com/6ba63003ee.js" crossorigin="anonymous"></script>
+
+	<style>
+		ul {
+            list-style: none;
+        }
+        li {
+            display: inline-block;
+        }
+		img {
+			border-radius: 20px;
+			filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+		}
+		button {
+			border-style: none;
+			background-color: transparent;
+		}
+		#selectFormTypes {
+			text-align: center;
+			margin: 20px 20px 20px 20px;
+		}
+
+	</style>
+
+	<title>ประเภทคำร้อง</title>
+</head>
+
+<body>
+    <!-- navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<img src="/images/FullSci.png" class="navbar-brand" style="height: 120px; margin: 20px">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+		  	</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<form action="homePage" method="get">
+							<button class="navbtn">
+								<i class="fa-solid fa-house" id="i"></i>  HOMEPAGE
+							</button>
+						</form>
+					</li>
+					<li class="nav-item">
+						<form action="logout" method="get">
+							<button class="navbtn-logout">
+								LOGOUT  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+							</button>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid" id="banner">
+		<br>
+		<h1>ประเภทคำร้อง</h1>
+		<h2>คณะวิทยาศาสตร์และเทคโนโลยี มหาวิยาลัยธรรมศาสตร์ ศูนย์รังสิต</h2>
+	</div><br>
+
+	<div class="container" style="background-color: white;">
+		<br>
+		<div class="row">
+			<!--ADD late-->
+			<div class="col" id="selectFormTypes">
+				<form action="addLateform" method="get">
+					<button>
+						<img src="/images/type_late.png" style="height: 300px; width: 300px;">
+					</button>
+				</form>
+			</div>
+
+			<!--ADD drop-->
+			<div class="col" id="selectFormTypes">
+				<form action="addDropform" method="get">
+					<button>
+						<img src="/images/type_w.png" style="height: 300px; width: 300px;">
+					</button>
+				</form>
+			</div>
+
+			<!--ADD cross-->
+			<div class="col" id="selectFormTypes">
+				<form action="addCrossform" method="get">
+					<button>
+						<img src="/images/type_cross.png" style="height: 300px; width: 300px;">
+					</button>
+				</form>
+			</div>
+
+			<!--Edit profile-->
+			<div class="col" id="selectFormTypes">
+				<form action="editProfile" method="get">
+					<button>
+						<img src="/images/type_editData.png" style="height: 300px; width: 300px;">
+					</button>
+				</form>
+			</div>
+
+			<!--History-->
+			<div class="col" id="selectFormTypes">
+				<form action="history" method="get">
+					<button>
+						<img src="/images/type_requestHistory.png" style="height: 300px; width: 300px;">
+					</button>
+				</form>
+			</div>
+
+			<div class="col" id="selectFormTypes">
+				<img src="/images/logo_TUbw.png" style="height: 200px; width: 200px; margin-top: 40px;">
+			</div>
+
+		</div>
+		<br>
+	</div>
+	<div class="container-fluid" id="bottom" style="height: 100px; width: 100%; background-color: #FFD13F;"></div>		
+	<script src="server.js"></script>
+</body>
+</html>
