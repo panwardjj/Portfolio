@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: hsl(84, 24%, 96%);
+    background: url(../images/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh
+}
+
+header {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    background: #ffffff;
+}
+
+#chk1 {
+    display: none;
+}
+
+i {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.longdoo {
+    width: 150px;
+    height: 44px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+header .search-box {
+    flex: 1;
+    position: relative;
+    margin-left: 50px;
+}
+
+.search-box button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scale(0.9);
+    background: #E61C5D;
+}
+
+.search-box button:hover {
+    opacity: 0.8;
+}
+
+header ul {
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 450;
+    padding: 10px 15px;
+
+}
+
+header ul li a:hover {
+    border-bottom: 0.0001px solid #E61C5D;
+
+}
+
+.search-box input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    background: #f2f2f2;
+    border-radius: 30px;
+    color: gray;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 35px;
+}
+
+.logoutbutton {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.8rem;
+    font-weight: 450;
+    border-radius: 2rem;
+    cursor: pointer;
+    background-color: #E61C5D;
+    transition: all 300ms ease;
+    color: aliceblue;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 40px;
+    font-size: medium;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.movie-head {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 35px;
+}
+
+.movie-title {
+    color: antiquewhite;
+    margin-left: 35px;
+    padding-top: 100px;
+}
+
+.about-movie {
+    color: antiquewhite;
+    margin-left: 35px;
+    padding-top: 0px;
+}
+
+.cinema {
+    color: antiquewhite;
+    margin-left: 35px;
+    padding-top: 100px;
+}
+
+.cinema-time-button button:hover {
+    opacity: 0.8;
+}
+
+.time-not-selected {
+    color: antiquewhite;
+    background: linear-gradient(136.65deg, #645097 4.86%, #21232F 103.81%);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.time-selected {
+    color: antiquewhite;
+    background: linear-gradient(136.65deg, #60FFCA 25.77%, rgba(33, 35, 47, 0.78) 103.81%);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.row-screen {
+    color: antiquewhite;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.seats-box {
+    color: antiquewhite;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 60px;
+
+
+
+
+}
+
+.row-seats {
+    display: flex;
+    justify-content: center;
+}
+
+.seats {
+    padding: 10px;
+}
+
+.seat-price {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.seat-price-box {
+    box-sizing: border-box;
+
+    left: 726.29px;
+    top: 964px;
+
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid #09FBD3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 5px 21px -3px rgba(255, 83, 192, 0.71);
+    border-radius: 22px;
+
+    text-align: center;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+
+}
+
+
+
+.status-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.continue-button {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.continue-button button {
+    color: antiquewhite;
+    background: linear-gradient(180deg, #EE0082 0%, rgba(86, 9, 51, 0.81) 173.01%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 150px;
+    padding-right: 150px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.continue-button button:hover {
+    opacity: 0.8;
+}
+
+.seats:hover {
+    transform: scale(1.1);
+}
+
+input[type=checkbox]{
+    display: none;
+}
+:checked + label img{
+    content: url("../images/seat-selected.png");
+    cursor: pointer;
+}
+
+.clock1 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    vertical-align: baseline;
+    border-radius: 50%;
+
+    border: 2px solid rgba(255, 255, 255, 0.65);
+}
+.clock1 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    vertical-align: baseline;
+    border-radius: 50%;
+
+    border: 2px solid rgba(255, 255, 255, 0.65);
+}
+
+.clock2 {
+    position: absolute;
+    width: 8px;
+    height: 0px;
+    left: 42px;
+    top: 196px;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    transform: rotate(90deg);
+}
+
+.clock3 {
+    position: absolute;
+    width: 8px;
+    height: 0px;
+    left: 40px;
+    top: 198px;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+}
+
+.screen {
+    position: absolute;
+    width: 1620px;
+    height: 100px;
+    left: 5px;
+    top: 249.15px;
+
+    border: solid 5px #FF53C0;
+    transform: matrix(1, -0.01, 0.02, 1, 0, 0);
+    border-radius: 50%/100px 100px 0 0;
+    border-color: #FF53C0 transparent transparent transparent;
+}
+
+.scr_hightlight {
+    position: absolute;
+    width: 1620px;
+    height: 100px;
+    left: 5px;
+    top: 249.19px;
+
+    border: solid 10px #A9146E;
+    border-radius: 50%/100px 100px 0 0;
+    border-color: #FF53C0 transparent transparent transparent;
+    filter: blur(7.5px);
+    transform: matrix(1, -0.01, 0.02, 1, 0, 0);
+}
